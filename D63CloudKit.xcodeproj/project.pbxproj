@@ -14,6 +14,7 @@
 		77D9FE561A96FA32001CE02B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77D9FE551A96FA32001CE02B /* Images.xcassets */; };
 		77D9FE591A96FA32001CE02B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77D9FE571A96FA32001CE02B /* LaunchScreen.xib */; };
 		77D9FE651A96FA32001CE02B /* D63CloudKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D9FE641A96FA32001CE02B /* D63CloudKitTests.m */; };
+		77D9FE721A96FAF5001CE02B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77D9FE711A96FAF5001CE02B /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		77D9FE5E1A96FA32001CE02B /* D63CloudKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = D63CloudKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77D9FE631A96FA32001CE02B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77D9FE641A96FA32001CE02B /* D63CloudKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = D63CloudKitTests.m; sourceTree = "<group>"; };
+		77D9FE6E1A96FA80001CE02B /* D63CloudKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = D63CloudKit.entitlements; sourceTree = "<group>"; };
+		77D9FE711A96FAF5001CE02B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77D9FE721A96FAF5001CE02B /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +67,7 @@
 		77D9FE3C1A96FA32001CE02B = {
 			isa = PBXGroup;
 			children = (
+				77D9FE711A96FAF5001CE02B /* CloudKit.framework */,
 				77D9FE471A96FA32001CE02B /* D63CloudKit */,
 				77D9FE611A96FA32001CE02B /* D63CloudKitTests */,
 				77D9FE461A96FA32001CE02B /* Products */,
@@ -81,6 +86,7 @@
 		77D9FE471A96FA32001CE02B /* D63CloudKit */ = {
 			isa = PBXGroup;
 			children = (
+				77D9FE6E1A96FA80001CE02B /* D63CloudKit.entitlements */,
 				77D9FE4C1A96FA32001CE02B /* AppDelegate.h */,
 				77D9FE4D1A96FA32001CE02B /* AppDelegate.m */,
 				77D9FE4F1A96FA32001CE02B /* ViewController.h */,
@@ -168,6 +174,12 @@
 				TargetAttributes = {
 					77D9FE441A96FA32001CE02B = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 4L2V3AB2J2;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					77D9FE5D1A96FA32001CE02B = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -345,9 +357,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = D63CloudKit/D63CloudKit.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = D63CloudKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -355,9 +371,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = D63CloudKit/D63CloudKit.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = D63CloudKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

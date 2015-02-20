@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+@import CloudKit;
 
 @interface ViewController ()
 
@@ -16,7 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    //Step 1. Initialize CKContainer.
+    CKContainer *container = [CKContainer defaultContainer];
+    NSLog(@"Container: %@", container);
+    NSLog(@"%@", container.containerIdentifier);
+    NSLog(@"%@", container.privateCloudDatabase);
+    NSLog(@"%@", container.publicCloudDatabase);
+    
+    //Step 2.
 }
 
 - (void)didReceiveMemoryWarning {
